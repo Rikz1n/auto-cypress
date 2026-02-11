@@ -1,12 +1,15 @@
 import userData from '../fixtures/user-data.json'
 import LoginPage from '../pages/loginPage.js'
+import DashboardPage from '../pages/dashboardPage.js'
 
 const loginPage = new LoginPage()
+const dashboardPage = new DashboardPage()
 
 describe('Orange HRM Tests', () => {
 
   const selectorsList = {
-    dashboardGrid: '.orangehrm-dashboard-grid > :nth-child(1)',
+    
+
     myInfoButton: ':nth-child(6) > .oxd-main-menu-item',
     firstNameField: '[name="firstName"]',
     middleNameField: '[name="middleName"]',
@@ -22,9 +25,9 @@ describe('Orange HRM Tests', () => {
     loginPage.acessLoginPage()
     loginPage.loginWithUser(userData.userSucceess.username, userData.userSucceess.password)
     
+    dashboardPage.findDashboard()
     
-    cy.location('pathname').should('equal', '/web/index.php/dashboard/index')
-    cy.get(selectorsList.dashboardGrid)
+
     cy.get(selectorsList.myInfoButton).click()
     cy.get(selectorsList.firstNameField, { timeout: 10000 }).clear().type('Henrique')
     cy.get(selectorsList.middleNameField).clear().type('Galiano')
