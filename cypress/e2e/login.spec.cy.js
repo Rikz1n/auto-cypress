@@ -1,21 +1,18 @@
 import userData from '../fixtures/user-data.json'
 import LoginPage from '../pages/loginPage.js'
 import DashboardPage from '../pages/dashboardPage.js'
+import MyinfoPage from '../pages/myinfoPage.js'
 
 const loginPage = new LoginPage()
 const dashboardPage = new DashboardPage()
+const myinfoPage = new MyinfoPage
 
 describe('Orange HRM Tests', () => {
 
   const selectorsList = {
     
 
-    myInfoButton: ':nth-child(6) > .oxd-main-menu-item',
-    firstNameField: '[name="firstName"]',
-    middleNameField: '[name="middleName"]',
-    lastNameField: '[name="lastName"]',
-    nationalityField: '.oxd-select-text',
-    nationalityDropdown: '.oxd-select-dropdown',
+    
     genericField: ''
   }
 
@@ -24,16 +21,12 @@ describe('Orange HRM Tests', () => {
   it.only('Login - User Info Update - Success', () => {
     loginPage.acessLoginPage()
     loginPage.loginWithUser(userData.userSucceess.username, userData.userSucceess.password)
-    
     dashboardPage.findDashboard()
-    
 
-    cy.get(selectorsList.myInfoButton).click()
-    cy.get(selectorsList.firstNameField, { timeout: 10000 }).clear().type('Henrique')
-    cy.get(selectorsList.middleNameField).clear().type('Galiano')
-    cy.get(selectorsList.lastNameField).clear().type('Moraes')
-    cy.get(selectorsList.nationalityField).eq(0).click()
-    cy.get(selectorsList.nationalityDropdown).contains('Brazilian').click()
+    myinfoPage.findMyinfoPage()
+    myinfoPage.updateMyinfos()
+    
+    
 
   })
 
