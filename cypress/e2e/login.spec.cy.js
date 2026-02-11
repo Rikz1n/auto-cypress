@@ -18,13 +18,11 @@ describe('Orange HRM Tests', () => {
     myinfoPage.updateMyinfosNationality('Brazilian')
   })
 
-
-  /* it('Login - Fail', () => {
-    cy.visit('/auth/login')
-    cy.get(selectorsList.usernameField).type(userData.userFail.username)
-    cy.get(selectorsList.passwordField).type(userData.userFail.password)
-    cy.get(selectorsList.loginButton).click()
-    cy.get(selectorsList.wrongCredentialAlert)
+  it('Login - Fail', () => {
+    loginPage.acessLoginPage()
+    loginPage.loginWithUser(userData.userFail.username, userData.userFail.password)
+    loginPage.loginFailAlert()
     
-  }) */
+    
+  })
 })
