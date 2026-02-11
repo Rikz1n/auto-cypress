@@ -16,12 +16,15 @@ class myinforPage {
         cy.get(this.selectorsList().myInfoButton).click()
     }
 
-    updateMyinfos(){
-        cy.get(this.selectorsList().firstNameField, { timeout: 10000 }).clear().type('Henrique')
-        cy.get(this.selectorsList().middleNameField).clear().type('Galiano')
-        cy.get(this.selectorsList().lastNameField).clear().type('Moraes')
+    updateMyinfosFullName(firstName, middleName, lastName){
+        cy.get(this.selectorsList().firstNameField).scrollIntoView({ offset: { top: -100, left: 0 } }).clear().type(firstName)
+        cy.get(this.selectorsList().middleNameField).clear().type(middleName)
+        cy.get(this.selectorsList().lastNameField).clear().type(lastName)
+    }
+
+    updateMyinfosNationality(nation){
         cy.get(this.selectorsList().nationalityField).eq(0).click()
-        cy.get(this.selectorsList().nationalityDropdown).contains('Brazilian').click()
+        cy.get(this.selectorsList().nationalityDropdown).contains(nation).click()
         cy.get(this.selectorsList().saveButton).click()
     }
 }

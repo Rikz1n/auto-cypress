@@ -9,34 +9,22 @@ const myinfoPage = new MyinfoPage
 
 describe('Orange HRM Tests', () => {
 
-  const selectorsList = {
-    
-
-    
-    genericField: ''
-  }
-
-  
-
-  it.only('Login - User Info Update - Success', () => {
+  it('Login - User Info Update - Success', () => {
     loginPage.acessLoginPage()
     loginPage.loginWithUser(userData.userSucceess.username, userData.userSucceess.password)
     dashboardPage.findDashboard()
-
     myinfoPage.findMyinfoPage()
-    myinfoPage.updateMyinfos()
-    
-    
-
+    myinfoPage.updateMyinfosFullName('Henrique', 'Galiano', 'Moraes')
+    myinfoPage.updateMyinfosNationality('Brazilian')
   })
 
 
-  it('Login - Fail', () => {
+  /* it('Login - Fail', () => {
     cy.visit('/auth/login')
     cy.get(selectorsList.usernameField).type(userData.userFail.username)
     cy.get(selectorsList.passwordField).type(userData.userFail.password)
     cy.get(selectorsList.loginButton).click()
     cy.get(selectorsList.wrongCredentialAlert)
     
-  })
+  }) */
 })
