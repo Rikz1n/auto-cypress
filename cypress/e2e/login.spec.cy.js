@@ -17,7 +17,7 @@ describe('Orange HRM Tests', () => {
     myinfoPage.updateMyinfosFullName('Henrique', 'Galiano', 'Moraes')
     myinfoPage.updateMyinfosNationality('Brazilian')
   })
-
+// mudei alguma coisa
   it('Login - Fail', () => {
     loginPage.acessLoginPage()
     loginPage.loginWithUser(userData.userFail.username, userData.userFail.password)
