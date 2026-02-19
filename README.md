@@ -1,31 +1,29 @@
-# Automação de testes E2E com Cypress na OrangeHRM
+# Automação de testes E2E com Cypress na OrangeHRM 🍊
 
 Este projeto contém a automação de testes E2E para a aplicação [OrangeHRM](https://opensource-demo.orangehrmlive.com/web/index.php/auth/login), utilizando [Cypress](https://www.cypress.io/).
 
-## 🚀 Tecnologias
+## Tecnologias e bibliotecas
 
 * [Cypress](https://www.cypress.io/)
 * [Node.js](https://nodejs.org/)
 * [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+* [Chance.js](https://chancejs.com/)
 
-## ⚙️ Pré-requisitos
+## Instalação
 
-Antes de começar, certifique-se de ter instalado em sua máquina:
-* [Node.js](https://nodejs.org/)
-* [Git](https://git-scm.com/)
-
-## 📥 Instalação
-
+> Certifique-se de ter **Node.js** e **Git** instalado em sua máquina
 1. Clone o repositório
 
 2. Entre na pasta do projeto
 
 3. Instale as dependências:
     ```Bash
-    npm install
+    npm instal
+    ```
 
-## 🧪 Como rodar os testes
-Modo Interativo:
+## Como rodar os testes
+
+Cypress UI:
 Abre a interface gráfica do Cypress para ver os testes rodando em tempo real.
 
 ```Bash
