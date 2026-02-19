@@ -18,7 +18,7 @@ Este projeto contém a automação de testes E2E para a aplicação [OrangeHRM](
 
 3. Instale as dependências:
     ```Bash
-    npm instal
+    npm install
     ```
 
 ## Como rodar os testes
